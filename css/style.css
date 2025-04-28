@@ -1,0 +1,279 @@
+:root {
+    --primary-color: #09847f;
+    /*root는 저 위에 있다는 뜻, --primary-color 중요한컬러*/
+    --secondary-color: #B4613D;
+
+    --body-color: #333333;
+
+    --line-color: #dddddd;
+    --white-color: #ffffff;
+    /*white-color 많이 쓰는 컬러*/
+    --backgroud-color: #f7f7f7;
+}
+
+html {
+    font-size: 62.5%;
+    /*10px??폰트 사이즈 크게 벌어지는걸 예방한다. 6.25%이렇게 쓰면 안되고 10단위로 사용해야한다.*/
+}
+
+body {
+    font-size: 1.6rem;
+    /*10px이 1rem, 1.6rem이 16px이 된다.*/
+}
+
+#header {
+    top: 0;
+    z-index: 999;
+    background: var(--white-color);
+}
+
+#header .hd_wrap {
+    display: flex;
+    justify-content: space-between;
+    /*space-between 양쪽을 맞추는거다.*/
+    align-items: center;
+    /*아이템들을 가운데로 끌어내릴거다.*/
+
+    height: 80px;
+}
+
+#header h1 a {
+    display: flex;
+}
+
+
+
+#header .gnb::before {
+    content: "";
+    position: absolute;
+    top: 80px;
+    left: 0;
+    right: 0;
+    z-index: 2;
+    height: 0;
+    background: #fff;
+    border-top: 1px solid #ddd;
+
+    transition: 0.4s;
+}
+
+#header .gnb:hover::before {
+    height: 210px;
+}
+
+#header .gnb>ul {
+    display: flex;
+    gap: 10rem;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+#header a {
+    /*헤더 아래 있는 모든 a*/
+    white-space: nowrap;
+}
+
+#header .gnb>ul>li>a {
+    /*꺽새 잘 쳐줘야한다.*/
+    display: block;
+    line-height: 12rem;
+    /*아래로 가준다??*/
+}
+
+
+#header .gnb>ul>li {
+    position: relative;
+}
+
+#header .gnb>ul>li ul {
+    position: absolute;
+    top: 104px;
+    left: 50%;
+    z-index: 2;
+
+    transform: translate(-50%, 0);
+
+    height: 0;
+    overflow: hidden;
+
+    transition: 0.4s;
+}
+
+#header .gnb:hover>ul>li>ul {
+    height: 200px;
+}
+
+#header .gnb>ul>li>ul a {
+    display: block;
+    line-height: 3.2rem;
+    padding: 0 24px;
+    text-align: center;
+    font-size: 15px;
+    font-weight: normal;
+}
+
+#header .gnb>ul>li>ul li~li a {}
+
+#header .utils {
+    display: flex;
+    gap: 2.4rem;
+    font-size: 1.6rem;
+
+}
+
+#header .utils a {
+    position: relative;
+    color: var(--body-color);
+    line-height: 12rem;
+    display: flex;
+    align-items: center;
+}
+
+#header .utils a img {}
+
+
+
+#header .utils a~a::before {
+    content: "";
+    position: absolute;
+    /*띄운다. 기준잡는  position: relative;를 위에 적어준다.*/
+
+    top: 50%;
+    left: -13px;
+    width: 2px;
+    height: 2px;
+    background: var(--body-color);
+
+    transform: translate(0, -50%);
+    /*계산잘해야한다.*/
+}
+
+.main_visual {}
+
+.main_visual .main_visual_slide .itm {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.main_visual .main_visual_slide .itm .bg {
+    position: absolute;
+    inset: 0 0 0 0;
+    height: 640px;
+}
+
+.main_visual .main_visual_slide .itm01 .bg {
+    background: url(../images/main_visual01.jpg) no-repeat center center/cover;
+}
+
+.main_visual .main_visual_slide .itm02 .bg {
+    background: url(../images/main_visual03.jpg) no-repeat center center/cover;
+}
+
+.main_menu .title {
+    margin: 0 auto;
+}
+
+.main_menu .title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+
+}
+
+
+.main_menu .title .tab {
+    display: flex;
+    justify-content: flex-end;
+
+
+}
+
+.main_menu .title .tab ul {
+    display: flex;
+    gap: 24px;
+    margin: 0;
+}
+
+
+.main_menu .title .tab ul li {
+    position: relative;
+}
+
+.main_menu .title .tab ul li.active a {
+    color: inherit;
+}
+
+.main_menu .title .tab ul li.active a:hover {
+    color: #009223;
+    /*마우스 올렸을 때 색상*/
+    font-weight: bold;
+    /*마우스 올렸을 때 두껍게*/
+}
+
+.main_menu .title .tab ul li~li::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: -12px;
+    width: 1px;
+    height: 0.5em;
+    background: var(--line-color);
+
+    transform: translate(0, -50%);
+}
+
+
+#footer {
+    padding: 64px 0 64px 0;
+    background: #362f2c;
+}
+
+#footer a {
+    color: #fff;
+}
+
+#footer .inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#footer .customer {
+    display: flex;
+    gap: 24px;
+}
+
+
+#footer p {
+    display: flex;
+    gap: 32px;
+    color: var(--white-color);
+    font-size: 14px;
+    line-height: 24px;
+}
+
+#footer p span {
+    position: relative;
+    margin-top: 16px;
+    font-size: 14px;
+}
+
+#footer p span~span::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: -16px;
+    width: 1px;
+    height: 0.5em;
+    background: var(--line-color);
+
+    transform: translate(0, -50%);
+}
+
+#footer address {
+    color: #fff;
+    margin-top: 16px;
+    font-size: 12px;
+}

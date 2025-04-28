@@ -1,0 +1,11 @@
+    /*일반적으로 쓰는 것들 담아놓을거다. 리셋에 넣어도 괜찮다.*/
+
+    .blind {
+        position: absolute;
+        clip: rect(0 0 0 0);
+        height: 1px;
+        width: 1px;
+        overflow: hidden;
+        margin: -1px;
+        /*IRcss라고 한다.*/
+    }
