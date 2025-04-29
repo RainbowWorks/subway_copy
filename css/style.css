@@ -1,7 +1,7 @@
 :root {
-    --primary-color: #09847f;
+    --primary-color: #009223;
     /*root는 저 위에 있다는 뜻, --primary-color 중요한컬러*/
-    --secondary-color: #B4613D;
+    --secondary-color: #ffce32;
 
     --body-color: #333333;
 
@@ -159,22 +159,29 @@ body {
 .main_visual .main_visual_slide .itm .bg {
     position: absolute;
     inset: 0 0 0 0;
-    height: 640px;
+    height: 100%;
+
+
 }
 
 .main_visual .main_visual_slide .itm01 .bg {
     background: url(../images/main_visual01.jpg) no-repeat center center/cover;
+
 }
+
+/*center/contain???*/
 
 .main_visual .main_visual_slide .itm02 .bg {
     background: url(../images/main_visual03.jpg) no-repeat center center/cover;
 }
 
-.main_menu .title {
+.main_content {
+    background: var(--backgroud-color);
     margin: 0 auto;
+
 }
 
-.main_menu .title {
+.main_content .title {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -182,48 +189,66 @@ body {
 
 }
 
-
-.main_menu .title .tab {
+.main_content .tab_menu {
     display: flex;
     justify-content: flex-end;
-
-
 }
 
-.main_menu .title .tab ul {
-    display: flex;
-    gap: 24px;
-    margin: 0;
-}
-
-
-.main_menu .title .tab ul li {
+.main_content .tab_menu button {
     position: relative;
+    height: 40px;
+    padding: 0 16px;
+    border-bottom: 1px solid #ddd;
 }
 
-.main_menu .title .tab ul li.active a {
-    color: inherit;
-}
-
-.main_menu .title .tab ul li.active a:hover {
-    color: #009223;
-    /*마우스 올렸을 때 색상*/
+.main_content .tab_menu button:hover {
+    color: var(--primary-color);
     font-weight: bold;
-    /*마우스 올렸을 때 두껍게*/
 }
 
-.main_menu .title .tab ul li~li::before {
+.main_content .tab_menu button::after {
     content: "";
     position: absolute;
-    top: 50%;
-    left: -12px;
-    width: 1px;
-    height: 0.5em;
-    background: var(--line-color);
-
-    transform: translate(0, -50%);
+    bottom: -1px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: 0;
+    height: 2px;
+    background: var(--primary-color);
+    transition: 0.5s;
 }
 
+.main_content .tab_menu button.on::after {
+    width: 100%;
+}
+
+.main_content .tab_content .con {
+    display: flex;
+    gap: 30px;
+    visibility: hidden;
+    height: 0;
+    overflow: hidden;
+}
+
+.main_content .tab_content .con.on {
+    visibility: visible;
+    height: auto;
+}
+
+
+
+.main_content .tab_content .con>* {
+    flex: 1;
+}
+
+.main_content .tab_content .con img {
+    background: var(--white-color);
+}
+
+.main_content .tab_content .con p {
+    margin-top: 16px;
+    text-align: center;
+}
 
 #footer {
     padding: 64px 0 64px 0;

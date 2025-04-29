@@ -1,5 +1,5 @@
 .inner {
-    max-width: 160rem;
+    max-width: 144rem;
     margin: 0 auto;
 }
 
@@ -8,7 +8,7 @@
 }
 
 .default .title {
-    max-width: 160rem;
+    max-width: 144rem;
     margin: 0 auto;
     margin-bottom: 4rem;
     /*전체적으로 타이틀 아래 마진 주는 방법*/
