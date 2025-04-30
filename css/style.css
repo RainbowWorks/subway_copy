@@ -152,14 +152,14 @@ body {
 
 .main_visual .main_visual_slide .itm {
     position: relative;
-    height: 100vh;
+    height: 56rem;
     overflow: hidden;
 }
 
 .main_visual .main_visual_slide .itm .bg {
     position: absolute;
     inset: 0 0 0 0;
-    height: 100%;
+    height: 56rem;
 
 
 }
@@ -175,13 +175,13 @@ body {
     background: url(../images/main_visual03.jpg) no-repeat center center/cover;
 }
 
-.main_content {
+.main_menu {
     background: var(--backgroud-color);
     margin: 0 auto;
 
 }
 
-.main_content .title {
+.main_menu .title {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -189,24 +189,24 @@ body {
 
 }
 
-.main_content .tab_menu {
+.main_menu .tab_menu {
     display: flex;
     justify-content: flex-end;
 }
 
-.main_content .tab_menu button {
+.main_menu .tab_menu button {
     position: relative;
     height: 40px;
     padding: 0 16px;
     border-bottom: 1px solid #ddd;
 }
 
-.main_content .tab_menu button:hover {
+.main_menu .tab_menu button:hover {
     color: var(--primary-color);
     font-weight: bold;
 }
 
-.main_content .tab_menu button::after {
+.main_menu .tab_menu button::after {
     content: "";
     position: absolute;
     bottom: -1px;
@@ -218,11 +218,11 @@ body {
     transition: 0.5s;
 }
 
-.main_content .tab_menu button.on::after {
+.main_menu .tab_menu button.on::after {
     width: 100%;
 }
 
-.main_content .tab_content .con {
+.main_menu .tab_menu_content .con {
     display: flex;
     gap: 30px;
     visibility: hidden;
@@ -230,24 +230,165 @@ body {
     overflow: hidden;
 }
 
-.main_content .tab_content .con.on {
+.main_menu .tab_menu_content .con.on {
     visibility: visible;
     height: auto;
 }
 
 
 
-.main_content .tab_content .con>* {
+.main_menu .tab_menu_content .con>* {
     flex: 1;
 }
 
-.main_content .tab_content .con img {
+.main_menu .tab_menu_content .con img {
     background: var(--white-color);
 }
 
-.main_content .tab_content .con p {
+.main_menu .tab_menu_content .con p {
     margin-top: 16px;
     text-align: center;
+}
+
+.main_news .inner {
+    display: flex;
+
+}
+
+.main_news .inner>* {
+    min-width: 0;
+}
+
+.main_news .left {
+    flex: 1;
+    background: var(--backgroud-color);
+
+    padding: 40px;
+}
+
+.main_news .right {
+    flex: 0 1 300px;
+}
+
+.main_news .left p {
+    margin-bottom: 40px;
+    text-align: left;
+
+}
+
+.main_news .left .title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 3rem;
+}
+
+.main_news .left .title .title_box {
+    flex: 1;
+    justify-content: center;
+}
+
+.main_news .left .title .title_box .itm {}
+
+.main_news .left .title .title_box .itm span {
+    line-height: 2;
+
+}
+
+
+.main_news .left .title .title_box .itm a {}
+
+
+
+.main_news .main_news_slide {}
+
+.main_news .main_news_slide .itm {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+
+}
+
+.main_news .main_news_slide .itm img {
+    width: 27rem;
+
+    height: 30rem;
+    object-fit: cover;
+    /*사이즈때문에쪼그라든이미지밖으로랜더링??*/
+}
+
+.main_news .right {
+    position: relative;
+}
+
+.main_news .arrows {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    z-index: 2;
+    /*999를 주면 안된다. 그럼 나중에 헤더를 덮어버린다.*/
+    transform: translate(0, -50%);
+    /*좌우로0아래위로-50%*/
+}
+
+.main_news .arrows button {
+    position: absolute;
+    top: 0;
+
+    /*버튼을 동그랗게 만들거다*/
+    width: 10px;
+    height: 10px;
+    border: 1px solid #ddd;
+    border-radius: 50%;
+    background: #fff;
+    /*뒤가 비치면 안되니까*/
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.25);
+    /*box-shadow 약간 번지는 효과*/
+}
+
+.main_news .arrows button svg {
+    margin-top: 2px;
+}
+
+.main_news .arrows .prev {
+    left: 0;
+    transform: translate(-50%, -50%);
+}
+
+.main_news .arrows .next {
+    right: 0;
+    transform: translate(50%, -50%);
+}
+
+.main_news .page {
+    /*도트 내맘대로 바꾸기*/
+    display: flex;
+    justify-content: center;
+
+    position: absolute;
+    bottom: -1.6rem;
+    left: 0;
+    right: 0;
+    z-index: 3;
+}
+
+.main_news .page span {
+    width: 10px;
+    height: 10px;
+    background: var(--secondary-color);
+    border-radius: 5px;
+    /*높이의 반만큼 설정하면된다.*/
+    opacity: 1;
+
+    transition: 0.4s;
+    z-index: 4;
+}
+
+.main_news .page span.swiper-pagination-bullet-active {
+    width: 80px;
 }
 
 #footer {

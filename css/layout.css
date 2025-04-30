@@ -15,8 +15,13 @@
 }
 
 .default .title h2 {
-    font-size: 32px;
+    font-size: 4rem;
     font-weight: 600;
+}
+
+.default .title h3 {
+    font-size: 4rem;
+    font-weight: 700;
 }
 
 .default .title p {
@@ -32,7 +37,7 @@
     padding: 0 24px;
     /*top 0 right 24 bottom 0 left 24*/
     height: 40px;
-    background: #362f2c;
+    background: var(--primary-color);
     color: #fff;
 
     border-radius: 8px;
