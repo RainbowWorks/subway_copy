@@ -5,6 +5,8 @@ $(function () {
         speed: 1000,/*옮기는거1초*/
     });/*슬라이드 돌아감, 베껴쓰면된다.*/
 
+
+
     const MIS = new Swiper('.main_news_slide', {
         loop: true,
         effect: 'fade', /*이미지에fade주기(effect: 'fade',)*/
@@ -20,6 +22,8 @@ $(function () {
 
 
 });
+
+
 
 $(function () {
     $(window).on('scroll', function () {

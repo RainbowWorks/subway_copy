@@ -250,6 +250,94 @@ body {
     text-align: center;
 }
 
+.main_manual .inner {
+    display: flex;
+}
+
+.main_news .inner>* {
+    min-width: 0;
+}
+
+.main_manual_itm {}
+
+/* 이미지 크기 고정 */
+.main_manual_itm figure {
+
+    background: var(--backgroud-color);
+    align-items: flex-start;
+
+}
+
+.main_manual_itm figure img {
+
+    display: block;
+
+
+}
+
+/* 텍스트 박스를 하얀 박스로 감싸기 */
+.main_manual_itm .itm {
+    background: var(--secondary-color);
+    display: flex;
+    justify-content: center;
+
+
+}
+
+.main_manual_itm .main_manual_txt {
+    display: block;
+    color: var(--primary-color);
+    text-align: center;
+
+}
+
+/* STEP 텍스트 */
+.main_manual_itm .itm strong {
+
+
+    font-size: 2.4rem;
+    font-weight: bold;
+    margin-top: 1.6rem;
+    margin-bottom: 8px;
+    line-height: 1.2;
+
+
+}
+
+/* 설명 텍스트 */
+.main_manual_itm .itm p {
+    font-size: 1.6rem;
+
+    color: var(--body-color);
+    line-height: 1.6;
+    margin-bottom: 2rem;
+}
+
+/* 버튼 */
+.main_manual_itm .itm a.default_btn {
+    display: inline-block;
+
+    padding: 10px 20px;
+
+    border: 1px solid var(--primary-color);
+    border-radius: 3rem;
+    text-decoration: none;
+    color: var(--primary-color);
+    font-weight: 500;
+
+    color: var(--white-color);
+}
+
+.main_manual_itm .itm a.default_btn:hover {
+    background: #28a745;
+    color: var(--white-color);
+
+}
+
+.main_news {
+    background: var(--backgroud-color);
+}
+
 .main_news .inner {
     display: flex;
 
@@ -261,7 +349,7 @@ body {
 
 .main_news .left {
     flex: 1;
-    background: var(--backgroud-color);
+    background: var(--white-color);
 
     padding: 40px;
 }
@@ -391,13 +479,30 @@ body {
     width: 80px;
 }
 
+.main_promotion {
+    background: var(--white-color);
+    text-align: center;
+}
+
+.main_promotion .inner {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+}
+
+@media (max-width:768px) {
+    .main_promotion .inner {
+        flex-direction: column;
+    }
+}
+
 #footer {
     padding: 64px 0 64px 0;
     background: #362f2c;
 }
 
 #footer a {
-    color: #fff;
+    color: var(--white-color);
 }
 
 #footer .inner {
