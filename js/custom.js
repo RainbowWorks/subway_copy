@@ -20,6 +20,23 @@ $(function () {
         },/*화살표*/
     });
 
+    const main_manual_slide = new Swiper('.main_manual_slide', {
+        loop: true,
+        slidesPerView: 3,
+        spaceBetween: 30,
+    });
+
+
+
+
+    $('.main_manual .step button').on('click', function () {
+        let idx = $(this).parent().index();
+        main_manual_slide.slideToLoop(idx);
+    })
+
+
+    /*autoplay.start*/
+
 
 });
 

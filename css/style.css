@@ -250,73 +250,135 @@ body {
     text-align: center;
 }
 
-.main_manual .inner {
-    display: flex;
-}
+
 
 .main_news .inner>* {
     min-width: 0;
 }
 
-.main_manual_itm {}
+.main_manual {}
 
-/* 이미지 크기 고정 */
-.main_manual_itm figure {
+.main_manual .inner {}
 
-    background: var(--backgroud-color);
-    align-items: flex-start;
-
-}
-
-.main_manual_itm figure img {
-
-    display: block;
-
-
-}
-
-/* 텍스트 박스를 하얀 박스로 감싸기 */
-.main_manual_itm .itm {
-    background: var(--secondary-color);
+.main_manual .w_inner {
     display: flex;
-    justify-content: center;
-
-
 }
 
-.main_manual_itm .main_manual_txt {
+.main_manual .step {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+}
+
+.main_manual .step::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    z-index: -1;
+
+    height: 4px;
+
+    background: #009223;
+}
+
+.main_manual .step button {
+    width: 80px;
+    height: 80px;
+
+    border: 4px solid #009223;
+    outline: 12px solid #fff;
+
+    background: #fff;
+    border-radius: 50%;
+}
+
+
+.main_manual .w_inner .right {
+    position: relative;
+    flex: 1;
+
+    min-width: 0;
+    /* overflow: hidden; 이걸 쓰거나 min-width: 0;이거 써도됨*/
+
+    margin-top: 4rem;
+}
+
+.main_manual .main_manual_slide .itm {
+    padding: 4.8rem;
+    background: var(--backgroud-color);
+    border-radius: 3.2rem;
     display: block;
-    color: var(--primary-color);
     text-align: center;
 
 }
 
-/* STEP 텍스트 */
-.main_manual_itm .itm strong {
+.main_manual .main_manual_slide .itm figure {
+    margin-bottom: 2.4rem;
+}
 
+.main_manual .main_manual_slide .itm img {
+    width: 100%;
+}
 
-    font-size: 2.4rem;
+.main_manual .main_manual_slide .itm .case {
+    padding: 2rem;
+    background-color: var(--white-color);
+    border-radius: 1.6rem;
+    box-shadow: 0 0 2.5px rgba(0, 0, 0, 0.25);
+}
+
+.main_manual .main_manual_slide .itm .case em {
+    font-size: 1.8rem;
+    color: var(--primary-color);
     font-weight: bold;
+    text-align: center;
+}
+
+.main_manual .main_manual_slide .itm .case strong {
+    position: relative;
+    display: block;
+    /* 박스가 꽉 차는 사이즈가 되어서 밑으로 떨어진다 */
+
+    font-size: 2.8rem;
+    /* 8배수 폰트를 사용하지 않을때 lineheight를 꼭 잡아줘라. */
+    font-weight: 300;
+    line-height: 2.4rem;
+
     margin-top: 1.6rem;
-    margin-bottom: 8px;
-    line-height: 1.2;
-
-
+    /* 마진 계산 잘해줘야한다. 여기선 em 사이즈도 같이 봐야한다. */
+    margin-bottom: 1.6rem;
+    /* 조정하면 되지만 8배수는 꼭 지켜라 */
 }
 
-/* 설명 텍스트 */
-.main_manual_itm .itm p {
+.main_manual .main_manual_slide .itm .case strong::after {
+    content: "";
+    display: block;
+    height: 4px;
+    width: 40px;
+    background: #ffce32;
+
+    margin: 16px auto;
+}
+
+
+.main_manual .main_manual_slide .itm p {
     font-size: 1.6rem;
-
-    color: var(--body-color);
-    line-height: 1.6;
-    margin-bottom: 2rem;
+    line-height: 2.4rem;
 }
 
-/* 버튼 */
-.main_manual_itm .itm a.default_btn {
-    display: inline-block;
 
+
+.main_manual .main_manual_slide .itm .lnk {
+    margin-top: 1.6rem;
+
+}
+
+.main_manual .main_manual_slide .itm .lnk a {}
+
+.main_manual .main_manual_slide .itm .lnk a.default_btn {
+    display: inline-block;
     padding: 10px 20px;
 
     border: 1px solid var(--primary-color);
@@ -328,10 +390,9 @@ body {
     color: var(--white-color);
 }
 
-.main_manual_itm .itm a.default_btn:hover {
+.main_manual .main_manual_slide .itm .lnk a.default_btn:hover {
     background: #28a745;
     color: var(--white-color);
-
 }
 
 .main_news {
