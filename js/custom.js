@@ -22,7 +22,7 @@ $(function () {
 
     const main_manual_slide = new Swiper('.main_manual_slide', {
         loop: true,
-        slidesPerView: 3,
+        slidesPerView: 3.5,
         spaceBetween: 30,
     });
 

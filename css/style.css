@@ -175,6 +175,7 @@ body {
     background: url(../images/main_visual03.jpg) no-repeat center center/cover;
 }
 
+
 .main_menu {
     background: var(--backgroud-color);
     margin: 0 auto;
@@ -243,17 +244,12 @@ body {
 
 .main_menu .tab_menu_content .con img {
     background: var(--white-color);
+    border-radius: 3.2rem;
 }
 
 .main_menu .tab_menu_content .con p {
     margin-top: 16px;
     text-align: center;
-}
-
-
-
-.main_news .inner>* {
-    min-width: 0;
 }
 
 .main_manual {}
@@ -280,20 +276,36 @@ body {
 
     height: 4px;
 
-    background: #009223;
+    border-top: 1px dashed var(--primary-color)
 }
 
 .main_manual .step button {
     width: 80px;
     height: 80px;
+    box-sizing: border-box;
+    position: relative;
+    display: block;
 
-    border: 4px solid #009223;
-    outline: 12px solid #fff;
+    border: 4px solid var(--primary-color);
+    outline: 12px solid var(--white-color);
 
-    background: #fff;
+    background: var(--white-color);
     border-radius: 50%;
+
+    color: var(--primary-color);
+    font-weight: 700;
+    text-align: center;
 }
 
+
+
+.main_manual .step button strong {
+    display: block;
+    margin-top: 4px;
+    font-size: 2.8rem;
+    color: var(--body-color);
+    text-align: center;
+}
 
 .main_manual .w_inner .right {
     position: relative;
@@ -397,120 +409,111 @@ body {
 
 .main_news {
     background: var(--backgroud-color);
+    position: relative;
 }
 
 .main_news .inner {
     display: flex;
+    justify-content: space-between;
+    gap: 3rem;
 
-}
+    margin: 0 auto;
 
-.main_news .inner>* {
-    min-width: 0;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .main_news .left {
-    flex: 1;
     background: var(--white-color);
-
-    padding: 40px;
-}
-
-.main_news .right {
-    flex: 0 1 300px;
-}
-
-.main_news .left p {
-    margin-bottom: 40px;
-    text-align: left;
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-sizing: border-box;
+    height: 30rem;
 
 }
 
 .main_news .left .title {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 3rem;
-}
-
-.main_news .left .title .title_box {
-    flex: 1;
-    justify-content: center;
-}
-
-.main_news .left .title .title_box .itm {}
-
-.main_news .left .title .title_box .itm span {
-    line-height: 2;
-
-}
-
-
-.main_news .left .title .title_box .itm a {}
-
-
-
-.main_news .main_news_slide {}
-
-.main_news .main_news_slide .itm {
-    display: flex;
-    justify-content: center;
-    align-items: center;
     width: 100%;
-    height: 100%;
+    gap: 2rem;
 
 }
 
-.main_news .main_news_slide .itm img {
-    width: 27rem;
+.main_news .news_hd {
+    flex: 1;
+    min-width: 0;
+    /* 내용 줄어들게 허용 */
 
-    height: 30rem;
-    object-fit: cover;
-    /*사이즈때문에쪼그라든이미지밖으로랜더링??*/
+    margin-top: 5rem;
+
+}
+
+.main_news .news_hd h2 {
+    display: block;
+    text-align: center;
+
+
+}
+
+
+
+.main_news .news_hd p {
+    display: block;
+    text-align: center;
+}
+
+.main_news .title_box ul {
+    display: block;
+    text-align: left;
+    line-height: 2.4;
+}
+
+.main_news .title_box a.default_btn {
+    margin-top: 2.4rem;
+
+    margin-top: 2.4rem;
+    display: inline-block;
+    padding: 10px 20px;
+
+    border: 1px solid var(--primary-color);
+    border-radius: 3rem;
+    text-decoration: none;
+    color: var(--primary-color);
+    font-weight: 500;
+
+    color: var(--white-color);
+
+}
+
+.main_news .title_box a.default_btn:hover {
+    background: #28a745;
+    color: var(--white-color);
+}
+
+
+.main_news .title_box {
+    flex: 2;
+    min-width: 0;
 }
 
 .main_news .right {
-    position: relative;
+    flex: none;
+    width: 270px;
+    /* 이미지 너비와 일치 */
+    height: 300px;
 }
 
-.main_news .arrows {
-    position: absolute;
-    top: 50%;
-    left: 0;
-    right: 0;
-    z-index: 2;
-    /*999를 주면 안된다. 그럼 나중에 헤더를 덮어버린다.*/
-    transform: translate(0, -50%);
-    /*좌우로0아래위로-50%*/
+.main_news .swiper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+
+
 }
 
-.main_news .arrows button {
-    position: absolute;
-    top: 0;
-
-    /*버튼을 동그랗게 만들거다*/
-    width: 10px;
-    height: 10px;
-    border: 1px solid #ddd;
-    border-radius: 50%;
-    background: #fff;
-    /*뒤가 비치면 안되니까*/
-    box-shadow: 0 0 8px rgba(0, 0, 0, 0.25);
-    /*box-shadow 약간 번지는 효과*/
-}
-
-.main_news .arrows button svg {
-    margin-top: 2px;
-}
-
-.main_news .arrows .prev {
-    left: 0;
-    transform: translate(-50%, -50%);
-}
-
-.main_news .arrows .next {
-    right: 0;
-    transform: translate(50%, -50%);
-}
 
 .main_news .page {
     /*도트 내맘대로 바꾸기*/
@@ -519,7 +522,7 @@ body {
 
     position: absolute;
     bottom: -1.6rem;
-    left: 0;
+    left: 1.6rem;
     right: 0;
     z-index: 3;
 }
@@ -540,10 +543,10 @@ body {
     width: 80px;
 }
 
-.main_promotion {
-    background: var(--white-color);
-    text-align: center;
-}
+
+
+.main_promotion {}
+
 
 .main_promotion .inner {
     display: flex;
