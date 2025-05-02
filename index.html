@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>subway</title>
+    <title>SUBWAY</title>
 
     <link rel="stylesheet" href="./lib/css/reset.css">
     <link rel="stylesheet" href="./lib/css/jquery.mb.YTPlayer.min.css">
@@ -27,6 +27,11 @@
 </head>
 
 <body>
+
+    <div id="skip_nav">
+        <a href="#content">본문바로가기</a>
+    </div>
+
     <header id="header">
 
         <div class="inner hd_wrap">
@@ -51,16 +56,16 @@
                     </li>
                     <li><a href="">이용방법</a>
                         <ul>
-                            <li><a href="">써브웨이 이용방법</a></li>
-                            <li><a href="">단체메뉴 이용방법</a></li>
-                            <li><a href="">신선한 재료 소개</a></li>
+                            <li><a href="">세트메뉴</a></li>
+                            <li><a href="">단체메뉴 </a></li>
+                            <li><a href="">재료 소개</a></li>
                             <li><a href="">App 이용방법</a></li>
                         </ul>
                     </li>
                     <li><a href="">새소식</a>
                         <ul>
-                            <li><a href="">이벤트ㆍ프로모션</a></li>
-                            <li><a href="">뉴스ㆍ공지사항</a></li>
+                            <li><a href="">프로모션</a></li>
+                            <li><a href="">공지사항</a></li>
                             <li><a href="">광고영상</a></li>
                         </ul>
                     </li>
@@ -68,14 +73,14 @@
                         <ul>
                             <li><a href="">써브웨이 역사</a></li>
                             <li><a href="">써브웨이 약속</a></li>
-                            <li><a href="">써브웨이 사회공헌</a></li>
-                            <li><a href="">샌드위치 아티스트 지원</a></li>
+                            <li><a href="">사회공헌</a></li>
+                            <li><a href="">아티스트 지원</a></li>
                             <li><a href="">매장찾기</a></li>
                         </ul>
                     </li>
                     <li><a href="">가맹점</a>
                         <ul>
-                            <li><a href="">써브웨이 프랜차이즈</a></li>
+                            <li><a href="">프랜차이즈</a></li>
                             <li><a href="">가맹관련 FAQ</a></li>
                             <li><a href="">가맹신청ㆍ문의</a></li>
                             <li><a href="">지사안내</a></li>
@@ -114,10 +119,11 @@
                     <div class="swiper-slide itm itm02">
                         <div class="bg" data-swiper-parallax="300"></div>
                     </div>
-                    <!-- .swiper.itm.itm0$*2 적으면 2개가 만들어짐 -->
-                    <div class="page"></div>
+
                 </div>
             </div>
+            <!-- .swiper.itm.itm0$*2 적으면 2개가 만들어짐 -->
+            <div class="page"></div>
 
         </section>
 
@@ -357,7 +363,49 @@
             </div>
         </section>
 
+        <section class="main_brand default">
+            <div class="inner">
+                <div class="left">
+                    <div class="title">
+                        <h2>Subway Brand</h2>
+                        <p>고객에게 최고의 경험을
+                            제공하기 위해 써브웨이 팀원들과 함께 노력합니다.</p>
+                        <a href="" class="default_btn">브랜드 더보기</a>
+                    </div>
+                </div>
+                <div class="right">
+                    <div class="swiper main_brand_slide">
+                        <div class="swiper-wrapper">
 
+                            <div class="swiper-slide itm">
+                                <figure>
+                                    <img src="./images/main_brand01.jpg" alt="">
+                                </figure>
+                            </div>
+                            <div class="swiper-slide itm">
+                                <figure>
+                                    <img src="./images/main_brand02.jpg" alt="">
+                                </figure>
+                            </div>
+                            <div class="swiper-slide itm">
+                                <figure>
+                                    <img src="./images/main_brand03.jpg" alt="">
+                                </figure>
+                            </div>
+                            <div class="swiper-slide itm">
+                                <figure>
+                                    <img src="./images/main_brand04.jpg" alt="">
+                                </figure>
+                            </div>
+
+
+                        </div>
+                    </div>
+
+                    <div class="page"></div>
+                </div>
+            </div>
+        </section>
 
         <section class="main_promotion default">
 
@@ -397,6 +445,7 @@
             </p>
             <address> &copy;2021 Subway IP LLC. All Rights Reserved.</address>
         </div>
+        <button class="to_top"><img src="./images/arrow-up.svg" alt=""></button>
     </footer>
 </body>
 

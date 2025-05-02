@@ -53,12 +53,13 @@
     /*top 0 right 24 bottom 0 left 24*/
     height: 40px;
     background: var(--primary-color);
-    color: #fff;
+    color: var(--white-color);
 
-    border-radius: 8px;
+    border-radius: 3rem;
     /*모서리 둥글게*/
     white-space: nowrap;
     /*글자 한줄로*/
+    font-weight: 500;
 }
 
 

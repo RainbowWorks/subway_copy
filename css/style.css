@@ -41,7 +41,7 @@ body {
     display: flex;
 }
 
-
+#header .gnb {}
 
 #header .gnb::before {
     content: "";
@@ -57,14 +57,17 @@ body {
     transition: 0.4s;
 }
 
+
+
 #header .gnb:hover::before {
-    height: 210px;
+    height: 256px;
 }
 
 #header .gnb>ul {
     display: flex;
-    gap: 10rem;
-    font-size: 18px;
+    gap: 5rem;
+    font-size: 20px;
+    line-height: 1.6;
     font-weight: 600;
 }
 
@@ -76,8 +79,8 @@ body {
 #header .gnb>ul>li>a {
     /*꺽새 잘 쳐줘야한다.*/
     display: block;
-    line-height: 12rem;
-    /*아래로 가준다??*/
+    margin: 10px 0 0 0;
+
 }
 
 
@@ -87,7 +90,7 @@ body {
 
 #header .gnb>ul>li ul {
     position: absolute;
-    top: 104px;
+    top: 88px;
     left: 50%;
     z-index: 2;
 
@@ -106,9 +109,9 @@ body {
 #header .gnb>ul>li>ul a {
     display: block;
     line-height: 3.2rem;
-    padding: 0 24px;
+    padding: 4px 100px;
     text-align: center;
-    font-size: 15px;
+    font-size: 16px;
     font-weight: normal;
 }
 
@@ -148,7 +151,9 @@ body {
     /*계산잘해야한다.*/
 }
 
-.main_visual {}
+.main_visual {
+    position: relative;
+}
 
 .main_visual .main_visual_slide .itm {
     position: relative;
@@ -176,19 +181,88 @@ body {
 }
 
 
+.main_visual .page {
+    /*도트 내맘대로 바꾸기*/
+    display: flex;
+    justify-content: center;
+
+    /*도트 사진위로 올리기*/
+    position: absolute;
+    bottom: 40px;
+    left: 0;
+    right: 0;
+    z-index: 3;
+}
+
+.main_visual .page span {
+    width: 16px;
+    height: 16px;
+    background: var(--white-color);
+    border-radius: 8px;
+    /*높이의 반만큼 설정하면된다.*/
+    opacity: 1;
+    /*opacity도트흐린거진하게*/
+    transition: 0.4s;
+    cursor: pointer;
+
+}
+
+.main_visual .page span:hover {
+    background: var(--secondary-color);
+
+}
+
+
+.main_visual .page span.active {
+    background: var(--secondary-color);
+
+}
+
+
+
+.main_visual .page span.swiper-pagination-bullet-active {
+    width: 80px;
+    /*페이지검사해서swiper-pagination-bullet-active가져왔음*/
+}
+
+
+
 .main_menu {
+
     background: var(--backgroud-color);
     margin: 0 auto;
 
 }
 
 .main_menu .title {
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: space-between;
     width: 100%;
+    z-index: 1;
 
 }
+
+.main_menu .title::before {
+    content: "";
+    position: absolute;
+
+    /* 슬라이드 귀퉁이에 만들거다 */
+    top: 0;
+    left: 0;
+
+
+
+    transform: translate(-45%, -40%);
+
+    z-index: -1;
+
+    border: 3.5rem solid var(--secondary-color);
+
+    border-radius: 50% 50% 0 50%;
+}
+
 
 .main_menu .tab_menu {
     display: flex;
@@ -255,6 +329,29 @@ body {
 .main_manual {}
 
 .main_manual .inner {}
+
+.main_manual .title {
+    position: relative;
+}
+
+.main_manual .title::before {
+    content: "";
+    position: absolute;
+
+    /* 슬라이드 귀퉁이에 만들거다 */
+    top: 0;
+    left: 0;
+
+
+
+    transform: translate(-45%, -40%);
+
+    z-index: -1;
+
+    border: 3.5rem solid var(--secondary-color);
+
+    border-radius: 50% 50% 0 50%;
+}
 
 .main_manual .w_inner {
     display: flex;
@@ -394,12 +491,8 @@ body {
     padding: 10px 20px;
 
     border: 1px solid var(--primary-color);
-    border-radius: 3rem;
-    text-decoration: none;
-    color: var(--primary-color);
-    font-weight: 500;
 
-    color: var(--white-color);
+    text-decoration: none;
 }
 
 .main_manual .main_manual_slide .itm .lnk a.default_btn:hover {
@@ -407,142 +500,154 @@ body {
     color: var(--white-color);
 }
 
-.main_news {
+.main_brand {
     background: var(--backgroud-color);
+}
+
+.main_brand .title {
     position: relative;
+    z-index: 1;
 }
 
-.main_news .inner {
+.main_brand .title::before {
+    content: "";
+    position: absolute;
+
+    /* 슬라이드 귀퉁이에 만들거다 */
+    top: 0;
+    left: 0;
+
+
+
+    transform: translate(-45%, -40%);
+
+    z-index: -1;
+
+    border: 3.5rem solid var(--secondary-color);
+
+    border-radius: 50% 50% 0 50%;
+}
+
+.main_brand .inner {
     display: flex;
-    justify-content: space-between;
-    gap: 3rem;
-
-    margin: 0 auto;
-
-    width: 100%;
-    box-sizing: border-box;
+    align-items: center;
+    /*쪼그라들여서 센터로 보내주기???*/
+    gap: 30px;
 }
 
-.main_news .left {
-    background: var(--white-color);
-    flex: 2;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    box-sizing: border-box;
-    height: 30rem;
-
-}
-
-.main_news .left .title {
-    display: flex;
-    width: 100%;
-    gap: 2rem;
-
-}
-
-.main_news .news_hd {
+.main_brand .inner>* {
     flex: 1;
     min-width: 0;
-    /* 내용 줄어들게 허용 */
-
-    margin-top: 5rem;
-
+    /*overflow: hidden;& min-width: 0;
+    js쓰고 박스 원위치 시키는 방법, 이해안되는부분, 오늘의 핵심이다.*/
 }
 
-.main_news .news_hd h2 {
-    display: block;
-    text-align: center;
-
-
+.main_brand .left p {
+    margin-bottom: 40px;
 }
 
-
-
-.main_news .news_hd p {
-    display: block;
-    text-align: center;
-}
-
-.main_news .title_box ul {
-    display: block;
-    text-align: left;
-    line-height: 2.4;
-}
-
-.main_news .title_box a.default_btn {
-    margin-top: 2.4rem;
-
-    margin-top: 2.4rem;
-    display: inline-block;
-    padding: 10px 20px;
-
-    border: 1px solid var(--primary-color);
-    border-radius: 3rem;
-    text-decoration: none;
-    color: var(--primary-color);
-    font-weight: 500;
-
-    color: var(--white-color);
-
-}
-
-.main_news .title_box a.default_btn:hover {
+.main_brand .left a.default_btn:hover {
     background: #28a745;
     color: var(--white-color);
 }
 
-
-.main_news .title_box {
-    flex: 2;
-    min-width: 0;
+.main_brand .main_interior_slide {
+    border-radius: 40px;
 }
 
-.main_news .right {
-    flex: none;
-    width: 270px;
-    /* 이미지 너비와 일치 */
-    height: 300px;
-}
-
-.main_news .swiper img {
+.main_brand .main_interior_slide .itm img {
     width: 100%;
-    height: 100%;
+    /*100%는 박스를 채우라는 이야기*/
+    height: 400px;
     object-fit: cover;
-    display: block;
-
+    /*사이즈때문에쪼그라든이미지밖으로랜더링??*/
 
 }
 
+.main_brand .right {
+    position: relative;
+}
 
-.main_news .page {
+.main_brand .arrows {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    z-index: 2;
+    /*999를 주면 안된다. 그럼 나중에 헤더를 덮어버린다.*/
+    transform: translate(0, -50%);
+    /*좌우로0아래위로-50%*/
+}
+
+.main_brand .arrows button {
+    position: absolute;
+    top: 0;
+
+    /*버튼을 동그랗게 만들거다*/
+    width: 40px;
+    height: 40px;
+    border: 1px solid #ddd;
+    border-radius: 50%;
+    background: #fff;
+    /*뒤가 비치면 안되니까*/
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.25);
+    /*box-shadow 약간 번지는 효과*/
+}
+
+.main_brand .arrows button svg {
+    margin-top: 2px;
+}
+
+.main_brand .arrows .prev {
+    left: 0;
+    transform: translate(-50%, -50%);
+}
+
+.main_brand .arrows .next {
+    right: 0;
+    transform: translate(50%, -50%);
+}
+
+.main_brand .page {
     /*도트 내맘대로 바꾸기*/
     display: flex;
     justify-content: center;
 
+    /*도트 사진위로 올리기*/
     position: absolute;
-    bottom: -1.6rem;
-    left: 1.6rem;
+    bottom: 40px;
+    left: 0;
     right: 0;
     z-index: 3;
 }
 
-.main_news .page span {
-    width: 10px;
-    height: 10px;
-    background: var(--secondary-color);
-    border-radius: 5px;
+.main_brand .page span {
+    width: 16px;
+    height: 16px;
+    background: var(--white-color);
+    border-radius: 8px;
     /*높이의 반만큼 설정하면된다.*/
     opacity: 1;
-
+    /*opacity도트흐린거진하게*/
     transition: 0.4s;
-    z-index: 4;
 }
 
-.main_news .page span.swiper-pagination-bullet-active {
+
+.main_brand .page span:hover {
+    background: var(--secondary-color);
+
+}
+
+
+.main_brand .page span.active {
+    background: var(--secondary-color);
+
+}
+
+.main_brand .page span.swiper-pagination-bullet-active {
     width: 80px;
+    /*페이지검사해서swiper-pagination-bullet-active가져왔음*/
 }
-
 
 
 .main_promotion {}
@@ -558,6 +663,30 @@ body {
     .main_promotion .inner {
         flex-direction: column;
     }
+}
+
+.main_promotion .title {
+    position: relative;
+    z-index: 1;
+}
+
+.main_promotion .title::before {
+    content: "";
+    position: absolute;
+
+    /* 슬라이드 귀퉁이에 만들거다 */
+    top: 0;
+    left: 0;
+
+
+
+    transform: translate(-45%, -40%);
+
+    z-index: -1;
+
+    border: 3.5rem solid var(--secondary-color);
+
+    border-radius: 50% 50% 0 50%;
 }
 
 #footer {
@@ -611,4 +740,29 @@ body {
     color: #fff;
     margin-top: 16px;
     font-size: 12px;
+}
+
+
+.to_top {
+    position: fixed;
+    bottom: 80px;
+    right: 160px;
+    z-index: 999;
+
+    width: 40px;
+    height: 40px;
+
+    background: var(--secondary-color);
+    border-radius: 50%;
+    opacity: 0;
+    visibility: hidden;
+    transition: 1s;
+
+}
+
+.to_top.on {
+    opacity: 1;
+    visibility: visible;
+    right: 160px;
+
 }

@@ -1,24 +1,18 @@
 $(function () {
-    const main_visual_slide = new Swiper('.main_visual_slide', {
+
+
+    const MVS = new Swiper('.main_visual_slide', {
         loop: true,
-        parallax: true,/*겹치는 슬라이드이다. wiper-parallax="300" html에 적어줘야됨*/
-        speed: 1000,/*옮기는거1초*/
-    });/*슬라이드 돌아감, 베껴쓰면된다.*/
-
-
-
-    const MIS = new Swiper('.main_news_slide', {
-        loop: true,
-        effect: 'fade', /*이미지에fade주기(effect: 'fade',)*/
+        parallax: true,
+        //effect: 'fade', /*이미지에fade주기(effect: 'fade',)*/
+        speed: 1000,
         pagination: {
-            el: '.main_news .page',
+            el: '.main_visual .page',
             clickable: true, /*클릭안되면 쓰면된다.*/
         },/*도트만들때필요함*/
-        navigation: {
-            nextEl: '.main_news .next',
-            prevEl: '.main_news .prev',
-        },/*화살표*/
+
     });
+
 
     const main_manual_slide = new Swiper('.main_manual_slide', {
         loop: true,
@@ -36,6 +30,19 @@ $(function () {
 
 
     /*autoplay.start*/
+
+    const MBS = new Swiper('.main_brand_slide', {
+        loop: true,
+        effect: 'fade', /*이미지에fade주기(effect: 'fade',)*/
+        pagination: {
+            el: '.main_brand .page',
+            clickable: true, /*클릭안되면 쓰면된다.*/
+        },/*도트만들때필요함*/
+        navigation: {
+            nextEl: '.main_brand .next',
+            prevEl: '.main_brand .prev',
+        },/*화살표*/
+    });
 
 
 });
@@ -64,5 +71,24 @@ $(function () {
 
         $('.main_menu .tab_menu_content .con').removeClass('on');
         $('.main_menu .tab_menu_content .con').eq(idx).addClass('on');
+    });
+});
+
+
+$(function () {
+    $('.to_top').on('click', function () {
+        $('html, body').animate({ scrollTop: 0 })
+    });
+
+    $(window).on('scroll', function () {
+        //스크롤 된 양을 구함.
+        let sct = $(window).scrollTop();
+        console.log(sct)
+
+        if (sct > 200) {
+            $('.to_top').addClass('on')
+        } else {
+            $('.to_top').removeClass('on')
+        }
     });
 });
