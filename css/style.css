@@ -60,14 +60,14 @@ body {
 
 
 #header .gnb:hover::before {
-    height: 256px;
+    height: 240px;
 }
 
 #header .gnb>ul {
     display: flex;
     gap: 5rem;
     font-size: 20px;
-    line-height: 1.6;
+    line-height: 1.2;
     font-weight: 600;
 }
 
@@ -79,7 +79,7 @@ body {
 #header .gnb>ul>li>a {
     /*꺽새 잘 쳐줘야한다.*/
     display: block;
-    margin: 10px 0 0 0;
+
 
 }
 
@@ -90,7 +90,7 @@ body {
 
 #header .gnb>ul>li ul {
     position: absolute;
-    top: 88px;
+    top: 72px;
     left: 50%;
     z-index: 2;
 
@@ -127,7 +127,7 @@ body {
 #header .utils a {
     position: relative;
     color: var(--body-color);
-    line-height: 12rem;
+    line-height: 1.2;
     display: flex;
     align-items: center;
 }
