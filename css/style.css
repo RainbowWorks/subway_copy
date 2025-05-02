@@ -205,6 +205,7 @@ body {
     transition: 0.4s;
     cursor: pointer;
 
+
 }
 
 .main_visual .page span:hover {
@@ -267,6 +268,7 @@ body {
 .main_menu .tab_menu {
     display: flex;
     justify-content: flex-end;
+
 }
 
 .main_menu .tab_menu button {
@@ -319,6 +321,7 @@ body {
 .main_menu .tab_menu_content .con img {
     background: var(--white-color);
     border-radius: 3.2rem;
+    cursor: pointer;
 }
 
 .main_menu .tab_menu_content .con p {
@@ -586,16 +589,12 @@ body {
     /*버튼을 동그랗게 만들거다*/
     width: 40px;
     height: 40px;
-    border: 1px solid #ddd;
+
     border-radius: 50%;
-    background: #fff;
+    background: var(--white-color);
     /*뒤가 비치면 안되니까*/
     box-shadow: 0 0 8px rgba(0, 0, 0, 0.25);
     /*box-shadow 약간 번지는 효과*/
-}
-
-.main_brand .arrows button svg {
-    margin-top: 2px;
 }
 
 .main_brand .arrows .prev {
@@ -606,6 +605,17 @@ body {
 .main_brand .arrows .next {
     right: 0;
     transform: translate(50%, -50%);
+}
+
+.main_brand .arrows button:hover {
+    background: var(--secondary-color);
+
+}
+
+
+.main_brand .arrows button.active {
+    background: var(--secondary-color);
+
 }
 
 .main_brand .page {
@@ -619,6 +629,7 @@ body {
     left: 0;
     right: 0;
     z-index: 3;
+
 }
 
 .main_brand .page span {
@@ -630,6 +641,8 @@ body {
     opacity: 1;
     /*opacity도트흐린거진하게*/
     transition: 0.4s;
+
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.25);
 }
 
 
